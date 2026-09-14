@@ -3,7 +3,7 @@ import Stop from "./Stop.jsx";
 
 export default function Skills() {
   return (
-    <Stop index="03" id="skills">
+    <Stop index="02" id="skills">
       <h2 className="section-title">Skills</h2>
       <div className="skills-grid">
         {skills.map((group) => (

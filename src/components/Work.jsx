@@ -15,7 +15,7 @@ export default function Work() {
         {projects.map((p) => (
           <article className="project-card" key={p.id}>
             <div className="project-card__art">
-              <DeviceMockup label={`${p.name} overview`} pattern="dashboard" />
+              <DeviceMockup label={`${p.name} overview`} pattern={p.gallery?.[0]?.pattern || "dashboard"} />
             </div>
             <div className="project-card__body">
               <div className="project-card__heading">
@@ -31,17 +31,9 @@ export default function Work() {
               </div>
               <p>{p.summary}</p>
               <div className="project-card__links">
-                {p.id === "transgo" ? (
-                  <a href="#transgo-case-study" className="link-arrow">
-                    View case study
-                  </a>
-                ) : p.github ? (
-                  <a href={p.github} target="_blank" rel="noreferrer" className="link-arrow">
-                    View on GitHub
-                  </a>
-                ) : (
-                  <span className="link-arrow link-arrow--pending">Case study coming soon</span>
-                )}
+                <a href={`#/project/${p.id}`} className="link-arrow">
+                  View case study
+                </a>
                 {p.liveDemo && (
                   <a href={p.liveDemo} target="_blank" rel="noreferrer" className="link-arrow">
                     Live demo
