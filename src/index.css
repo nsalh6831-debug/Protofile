@@ -1,13 +1,13 @@
 :root {
-  --bg: #f4f6f8;
-  --surface: #ffffff;
-  --ink: #131b2a;
-  --muted: #5b6672;
-  --line: #d7dce2;
-  --accent: #2f4cdd;
-  --accent-ink: #1c2f99;
-  --accent-soft: #e8ecfb;
-  --stop: #f2a93b;
+  --bg: #120f21;
+  --surface: #1c1832;
+  --ink: #f3f1fb;
+  --muted: #a79fc4;
+  --line: #322b52;
+  --accent: #8b5cf6;
+  --accent-ink: #c4b5fd;
+  --accent-soft: rgba(139, 92, 246, 0.16);
+  --stop: #ec4899;
 
   --font-display: "Space Grotesk", "Segoe UI", sans-serif;
   --font-body: "Inter", "Segoe UI", sans-serif;

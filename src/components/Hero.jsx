@@ -1,10 +1,11 @@
 import { profile } from "../data.js";
 import DeviceMockup from "./DeviceMockup.jsx";
+import Reveal from "./Reveal.jsx";
 
 export default function Hero() {
   return (
     <section id="top" className="hero">
-      <div className="hero__text">
+      <Reveal className="hero__text">
         <h1 className="hero__title">
           {profile.name}
           <span className="hero__role">{profile.role}</span>
@@ -21,10 +22,10 @@ export default function Hero() {
             GitHub
           </a>
         </div>
-      </div>
-      <div className="hero__art">
+      </Reveal>
+      <Reveal className="hero__art">
         <DeviceMockup label="TransGo dashboard" pattern="dashboard" tall />
-      </div>
+      </Reveal>
     </section>
   );
 }

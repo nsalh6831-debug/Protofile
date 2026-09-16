@@ -3,7 +3,7 @@ import Stop from "./Stop.jsx";
 
 export default function Contact() {
   return (
-    <Stop index="04" id="contact" short>
+    <Stop index="04" id="contact" short end>
       <h2 className="section-title">Have a project in mind?</h2>
       <div className="contact__links">
         <a href={`mailto:${profile.email}`}>{profile.email}</a>
