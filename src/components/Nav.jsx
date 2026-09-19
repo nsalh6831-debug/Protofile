@@ -12,6 +12,7 @@ export default function Nav() {
     <header className="nav">
       <div className="nav__inner">
         <a href="#top" className="nav__name">
+          <img src="/avatar.svg" alt="" className="nav__avatar" />
           Nawal Saleh
         </a>
         <nav className="nav__links">

@@ -1,5 +1,4 @@
 import { profile } from "../data.js";
-import DeviceMockup from "./DeviceMockup.jsx";
 import Reveal from "./Reveal.jsx";
 
 export default function Hero() {
@@ -24,7 +23,7 @@ export default function Hero() {
         </div>
       </Reveal>
       <Reveal className="hero__art">
-        <DeviceMockup label="TransGo dashboard" pattern="dashboard" tall />
+        <img src="/hero-girl.svg" alt="Illustration of Nawal at her laptop" className="hero__illustration" />
       </Reveal>
     </section>
   );

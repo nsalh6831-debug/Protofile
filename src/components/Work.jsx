@@ -15,7 +15,11 @@ export default function Work() {
         {projects.map((p) => (
           <article className="project-card" key={p.id}>
             <div className="project-card__art">
-              <DeviceMockup label={`${p.name} overview`} pattern={p.gallery?.[0]?.pattern || "dashboard"} />
+              {p.image ? (
+                <img src={p.image} alt={`${p.name} overview`} className="mockup" />
+              ) : (
+                <DeviceMockup label={`${p.name} overview`} pattern={p.gallery?.[0]?.pattern || "dashboard"} />
+              )}
             </div>
             <div className="project-card__body">
               <div className="project-card__heading">

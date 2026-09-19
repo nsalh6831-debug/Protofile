@@ -1,11 +1,43 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import DeviceMockup from "./DeviceMockup.jsx";
+import Lightbox from "./Lightbox.jsx";
 
 export default function ProjectDetail({ project }) {
   const [activeImage, setActiveImage] = useState(0);
+  const [lightboxIndex, setLightboxIndex] = useState(null);
   const gallery = project.gallery || [];
 
-  const goTo = (i) => setActiveImage((i + gallery.length) % gallery.length);
+  // Category tabs: only shown when gallery photos have a `category` field
+  // (large galleries like Masa Beauty / TransGo). Falls back to one flat list otherwise.
+  const categories = Array.from(new Set(gallery.map((g) => g.category).filter(Boolean)));
+  const [activeCategory, setActiveCategory] = useState("All");
+  const filteredIndices = gallery
+    .map((_, i) => i)
+    .filter((i) => activeCategory === "All" || gallery[i].category === activeCategory);
+
+  useEffect(() => {
+    if (!filteredIndices.includes(activeImage)) {
+      setActiveImage(filteredIndices[0] ?? 0);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [activeCategory]);
+
+  // Hero photo: set project.heroImage in data.js to swap it independently of
+  // gallery order/index 0. Falls back to project.image, then the first gallery photo.
+  const heroSrc = project.heroImage || project.image || gallery[0]?.image;
+  const heroInGallery = gallery.some((g) => g.image === heroSrc);
+  // Images the lightbox can flip through. If the hero photo isn't already
+  // one of the gallery photos, it's added at the front so it's still viewable.
+  const lightboxImages = heroInGallery || !heroSrc
+    ? gallery
+    : [{ label: `${project.name} overview`, image: heroSrc }, ...gallery];
+  const galleryOffset = heroInGallery || !heroSrc ? 0 : 1;
+  const heroLightboxIndex = heroInGallery
+    ? lightboxImages.findIndex((g) => g.image === heroSrc)
+    : 0;
+
+  const openLightbox = (i) => setLightboxIndex(i);
+  const closeLightbox = () => setLightboxIndex(null);
 
   return (
     <div className="detail">
@@ -20,7 +52,18 @@ export default function ProjectDetail({ project }) {
         <h1 className="detail__title">{project.name}</h1>
         <p className="detail__subtitle">{project.subtitle}</p>
         <div className="detail__hero-art">
-          <DeviceMockup label={`${project.name} hero`} pattern={gallery[0]?.pattern || "dashboard"} tall />
+          {heroSrc ? (
+            <button
+              className="mockup-frame"
+              onClick={() => openLightbox(heroLightboxIndex)}
+              aria-label={`Open ${project.name} image`}
+            >
+              <img src={heroSrc} alt={`${project.name} hero`} className="mockup mockup--photo" />
+              <span className="mockup-frame__hint">⤢ View full size</span>
+            </button>
+          ) : (
+            <DeviceMockup label={`${project.name} hero`} pattern={gallery[0]?.pattern || "dashboard"} tall />
+          )}
         </div>
       </div>
 
@@ -85,26 +128,63 @@ export default function ProjectDetail({ project }) {
         {gallery.length > 0 && (
           <section className="detail__section">
             <h2 className="section-title">Project gallery</h2>
+
+            {categories.length > 1 && (
+              <div className="gallery__tabs">
+                {["All", ...categories].map((cat) => (
+                  <button
+                    key={cat}
+                    className={`gallery__tab ${activeCategory === cat ? "is-active" : ""}`}
+                    onClick={() => setActiveCategory(cat)}
+                  >
+                    {cat}
+                  </button>
+                ))}
+              </div>
+            )}
+
             <div className="gallery">
               <div className="gallery__main">
-                <DeviceMockup
-                  label={gallery[activeImage].label}
-                  pattern={gallery[activeImage].pattern}
-                  tall
-                />
+                {gallery[activeImage].image ? (
+                  <button
+                    className="mockup-frame"
+                    onClick={() => openLightbox(activeImage + galleryOffset)}
+                    aria-label={`Open ${gallery[activeImage].label}`}
+                  >
+                    <img
+                      src={gallery[activeImage].image}
+                      alt={gallery[activeImage].label}
+                      className="mockup mockup--photo"
+                    />
+                    <span className="mockup-frame__hint">⤢ View full size</span>
+                  </button>
+                ) : (
+                  <DeviceMockup
+                    label={gallery[activeImage].label}
+                    pattern={gallery[activeImage].pattern}
+                    tall
+                  />
+                )}
               </div>
-              {gallery.length > 1 && (
+              {filteredIndices.length > 1 && (
                 <div className="gallery__thumbs">
-                  {gallery.map((g, i) => (
-                    <button
-                      key={g.label}
-                      className={`gallery__thumb ${i === activeImage ? "is-active" : ""}`}
-                      onClick={() => goTo(i)}
-                      aria-label={g.label}
-                    >
-                      <DeviceMockup label={g.label} pattern={g.pattern} />
-                    </button>
-                  ))}
+                  {filteredIndices.map((i) => {
+                    const g = gallery[i];
+                    return (
+                      <button
+                        key={g.label}
+                        className={`gallery__thumb ${i === activeImage ? "is-active" : ""}`}
+                        onClick={() => setActiveImage(i)}
+                        aria-label={g.label}
+                      >
+                        {g.image ? (
+                          <img src={g.image} alt={g.label} className="mockup" />
+                        ) : (
+                          <DeviceMockup label={g.label} pattern={g.pattern} />
+                        )}
+                      </button>
+                    );
+                  })}
                 </div>
               )}
             </div>
@@ -138,6 +218,15 @@ export default function ProjectDetail({ project }) {
           </a>
         </div>
       </div>
+
+      {lightboxIndex !== null && (
+        <Lightbox
+          images={lightboxImages}
+          index={lightboxIndex}
+          onNavigate={setLightboxIndex}
+          onClose={closeLightbox}
+        />
+      )}
     </div>
   );
 }

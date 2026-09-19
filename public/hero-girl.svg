@@ -1,0 +1,79 @@
+<svg width="420" height="420" viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="blob" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#241b3d"/>
+      <stop offset="100%" stop-color="#1c1832"/>
+    </linearGradient>
+    <linearGradient id="skirt" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8b5cf6"/>
+      <stop offset="100%" stop-color="#6d28d9"/>
+    </linearGradient>
+    <linearGradient id="laptop" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#c4b5fd"/>
+      <stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+  </defs>
+
+  <!-- backdrop blob -->
+  <path d="M210 24c78 0 150 46 168 118 16 66-18 132-78 164-64 34-146 30-196-18-46-44-58-116-30-176 28-60 76-88 136-88z" fill="url(#blob)"/>
+
+  <!-- floating dots -->
+  <circle cx="72" cy="96" r="4" fill="#ec4899"/>
+  <circle cx="344" cy="120" r="3" fill="#c4b5fd"/>
+  <circle cx="352" cy="290" r="4" fill="#8b5cf6"/>
+  <circle cx="60" cy="300" r="3" fill="#ec4899"/>
+
+  <!-- floor shadow -->
+  <ellipse cx="210" cy="356" rx="98" ry="14" fill="#0d0a1a" opacity="0.5"/>
+
+  <!-- crossed legs -->
+  <path d="M140 300c10 20 30 34 70 34s60-14 70-34l-14-16c-16 14-36 22-56 22s-40-8-56-22z" fill="#2b2140"/>
+
+  <!-- skirt / lower body -->
+  <path d="M150 230c-10 26-14 50-10 70h140c4-20 0-44-10-70-18 14-102 14-120 0z" fill="url(#skirt)"/>
+
+  <!-- laptop base on lap -->
+  <rect x="164" y="252" width="92" height="10" rx="3" fill="#4c3a78"/>
+  <!-- laptop screen -->
+  <path d="M172 200h76l6 52h-88z" fill="#241b3d"/>
+  <path d="M172 200h76l6 52h-88z" fill="none" stroke="#8b5cf6" stroke-width="2"/>
+  <rect x="182" y="212" width="56" height="4" rx="2" fill="#a78bfa"/>
+  <rect x="182" y="222" width="40" height="4" rx="2" fill="#ec4899"/>
+  <rect x="182" y="232" width="48" height="4" rx="2" fill="#c4b5fd"/>
+
+  <!-- torso / top -->
+  <path d="M158 168c8-20 26-32 52-32s44 12 52 32l8 62h-120z" fill="#f472b6"/>
+
+  <!-- arms reaching to laptop -->
+  <path d="M168 190c-14 8-24 22-26 40l16 6c4-16 12-28 22-36z" fill="#f6d9c4"/>
+  <path d="M252 190c14 8 24 22 26 40l-16 6c-4-16-12-28-22-36z" fill="#f6d9c4"/>
+
+  <!-- neck -->
+  <rect x="198" y="140" width="24" height="20" rx="8" fill="#f6d9c4"/>
+
+  <!-- head -->
+  <circle cx="210" cy="118" r="34" fill="#f6d9c4"/>
+
+  <!-- hair back -->
+  <path d="M176 112c0-24 16-42 34-42s34 18 34 42c0 6-1 12-3 18-4-4-8-10-9-18-6 8-16 13-22 13s-16-5-22-13c-1 8-5 14-9 18-2-6-3-12-3-18z" fill="#2b2140"/>
+  <path d="M178 118c-8 10-12 30-8 58 6-2 10-8 12-16-2-14-2-30-4-42z" fill="#2b2140"/>
+  <path d="M242 118c8 10 12 30 8 58-6-2-10-8-12-16 2-14 2-30 4-42z" fill="#2b2140"/>
+
+  <!-- fringe -->
+  <path d="M180 104c4-16 14-26 30-26s26 10 30 26c-6-4-12-6-18-4-4 4-10 6-12 6s-8-2-12-6c-6-2-12 0-18 4z" fill="#2b2140"/>
+
+  <!-- eyes -->
+  <ellipse cx="200" cy="120" rx="2.6" ry="3.4" fill="#2b2140"/>
+  <ellipse cx="220" cy="120" rx="2.6" ry="3.4" fill="#2b2140"/>
+
+  <!-- eyebrows -->
+  <path d="M195 112c3-2 7-2 10 0" stroke="#2b2140" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+  <path d="M215 112c3-2 7-2 10 0" stroke="#2b2140" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+
+  <!-- blush -->
+  <ellipse cx="195" cy="128" rx="4" ry="2.4" fill="#f0a898" opacity="0.55"/>
+  <ellipse cx="225" cy="128" rx="4" ry="2.4" fill="#f0a898" opacity="0.55"/>
+
+  <!-- smile -->
+  <path d="M202 134c4 4 12 4 16 0" stroke="#a85c4a" stroke-width="2" fill="none" stroke-linecap="round"/>
+</svg>

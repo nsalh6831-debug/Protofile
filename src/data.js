@@ -44,12 +44,15 @@ export const projects = [
     role: "Frontend Developer",
     tags: ["React", "JavaScript", "Bootstrap", "REST API", "Google Maps"],
     tools: ["React.js", "JavaScript", "Bootstrap", "Axios", "REST API", "Google Maps API", "Git / GitHub"],
+    image: "/transgo/dashboard-overview.jpg",
+    heroImage: "/transgo/dashboard-overview.jpg", // غيّري بس هالسطر لتبدّلي صورة الـ hero بالمشروع
     summary:
       "A web-based transportation management system for managing trips, bookings, reports, notifications, and live trip tracking.",
     overview:
       "TransGo is a transportation management platform that lets an operations team manage trips, bookings, drivers, and reporting from a central dashboard, with live trip tracking for both riders and dispatchers. It's a collaborative graduation project with a shared codebase — I worked on the frontend admin panel: the interfaces an operator actually uses day to day.",
     context: "Collaborative graduation project — shared codebase, private repository.",
     highlights: [
+      "Built driver management with wallet balances, ratings, and status",
       "Built the notifications system with three modes: broadcast, geo-targeted, and direct",
       "Built financial reporting pages: revenue reports and driver earnings breakdowns",
       "Built the complaints tracking report and list views",
@@ -78,12 +81,36 @@ export const projects = [
       },
     ],
     gallery: [
-      { label: "Dashboard", pattern: "dashboard" },
-      { label: "Trips management", pattern: "map" },
-      { label: "Bookings", pattern: "list" },
-      { label: "Financial reports", pattern: "cards" },
-      { label: "Notifications", pattern: "list" },
-      { label: "Live tracking", pattern: "map" },
+      { label: "Dashboard overview", category: "Dashboard", pattern: "dashboard", image: "/transgo/dashboard-overview.jpg" },
+
+      { label: "Trips management", category: "Trips", pattern: "list", image: "/transgo/trips-list.jpg" },
+      { label: "Trip filters & status", category: "Trips", pattern: "cards", image: "/transgo/trips-filters.jpg" },
+      { label: "Trips list (development view)", category: "Trips", pattern: "list", image: "/transgo/trips-dev-view.jpg" },
+
+      { label: "Bookings overview", category: "Bookings", pattern: "list", image: "/transgo/02-bookings.jpg" },
+      { label: "Booking detail", category: "Bookings", pattern: "cards", image: "/transgo/booking-detail.jpg" },
+      { label: "Bookings management", category: "Bookings", pattern: "list", image: "/transgo/bookings-management.jpg" },
+      { label: "Bookings — filtered view", category: "Bookings", pattern: "list", image: "/transgo/bookings-list-sidebar.jpg" },
+      { label: "Booking details per trip", category: "Bookings", pattern: "list", image: "/transgo/bookings-trip-detail.jpg" },
+
+      { label: "Live trip tracking", category: "Tracking", pattern: "map", image: "/transgo/live-tracking.jpg" },
+      { label: "Live tracking — before start", category: "Tracking", pattern: "map", image: "/transgo/tracking-idle.jpg" },
+      { label: "Live tracking — trip start", category: "Tracking", pattern: "map", image: "/transgo/tracking-12-start.jpg" },
+      { label: "Live tracking — active route", category: "Tracking", pattern: "map", image: "/transgo/tracking-12-active.jpg" },
+      { label: "Live tracking — route map", category: "Tracking", pattern: "map", image: "/transgo/tracking-8-map.jpg" },
+      { label: "Live tracking — moving vehicle", category: "Tracking", pattern: "map", image: "/transgo/tracking-8-moving.jpg" },
+
+      { label: "Revenue report", category: "Reports", pattern: "dashboard", image: "/transgo/revenue-report.jpg" },
+      { label: "Driver earnings", category: "Reports", pattern: "cards", image: "/transgo/driver-earnings.jpg" },
+      { label: "Driver performance", category: "Reports", pattern: "dashboard", image: "/transgo/driver-performance.jpg" },
+      { label: "Driver performance report", category: "Reports", pattern: "list", image: "/transgo/reports-drivers-performance.jpg" },
+      { label: "App usage report", category: "Reports", pattern: "cards", image: "/transgo/app-usage-report.jpg" },
+
+      { label: "Complaints report", category: "Complaints", pattern: "cards", image: "/transgo/complaints-report.jpg" },
+      { label: "Complaints report (English)", category: "Complaints", pattern: "cards", image: "/transgo/reports-complaints-en.jpg" },
+
+      { label: "Send notification", category: "Notifications", pattern: "list", image: "/transgo/send-notification.jpg" },
+      { label: "Notifications panel", category: "Notifications", pattern: "list", image: "/transgo/notifications-panel.jpg" },
     ],
     liveDemo: "", // ضيفي رابط الـ deploy هون إذا عملتيه
     github: "", // اتركيه فاضي لأنو الريبو خاص
@@ -91,59 +118,142 @@ export const projects = [
   {
     id: "beauty-center",
     order: "02",
-    name: "Beauty Center",
-    subtitle: "Responsive Business Website",
-    category: "Business Website",
-    duration: "Solo project",
-    role: "Frontend Developer",
-    tags: ["React", "JavaScript", "CSS3"],
-    tools: ["React.js", "JavaScript", "CSS3"],
+    name: "Masa Beauty",
+    subtitle: "Beauty Center Management System",
+    category: "Admin Dashboard",
+    duration: "4th year ",
+    role: "Full-cycle Developer",
+    tags: ["React", "JavaScript", "REST API", "CSS3"],
+    tools: ["React.js", "JavaScript", "CSS3", "REST API", "Git / GitHub"],
+    image: "/masa-beauty/public-landing.jpg",
+    heroImage: "/masa-beauty/public-landing.jpg", // غيّري بس هالسطر لتبدّلي صورة الـ hero بالمشروع
     summary:
-      "A responsive website for a beauty center — service browsing and a clean, mobile-first, booking-oriented layout.",
+      "A full management system for a real beauty center — staff, scheduling, payroll, bookings, and payments, built solo from requirements gathering to integration and testing.",
     overview:
-      "A responsive marketing website for a beauty center, built solo end to end — from component structure to styling. The focus was a clean, mobile-first layout that makes it easy to browse services and get in touch.",
-    context: "Solo project.",
+      "Masa Beauty is a management dashboard built for an actual beauty center as a 4th-year project. I partnered directly with the client, gathered and analyzed their real operational requirements, then designed and built the full admin system myself — through API integration and testing — covering staff, scheduling, client sessions, and finances.",
+    context: " built with a real client: requirements gathering, analysis, implementation, integration, and testing.",
     highlights: [
-      "Designed and built the entire frontend independently",
-      "Mobile-first, responsive layout across all screen sizes",
-      "Clean service-browsing structure aimed at conversion",
+      "Gathered requirements directly from a real beauty center and translated them into working features",
+      "Built staff management for doctors, specialists, and secretaries, including per-day work schedules",
+      "Built attendance tracking with monthly/yearly present-absent breakdowns",
+      "Built payroll management with salary, bonus, and discount calculations per employee",
+      "Built client session tracking per service, with remaining sessions and payment progress",
+      "Built a bookings system with daily booking views and status tracking",
+      "Built a notifications center for new reservations and payment confirmations",
+      "Built employee complaints tracking with open/resolved states",
+      "Built payment methods management (cash providers and bank transfer) and admin authentication",
     ],
     problem:
-      "A small business needed an online presence that felt professional on mobile first, since most visitors would land on it from Instagram or WhatsApp links.",
+      "The beauty center was running staff schedules, client sessions, and payments manually, with no single place to see who's working, who's been paid, and where each client's package of sessions stood.",
     solutionSteps: [
       {
-        title: "Mobile-first layout",
-        description: "Designed for small screens first, then scaled up, since that's where most traffic comes from.",
+        title: "Requirements & analysis",
+        description: "Worked directly with the center's staff to map their real day-to-day workflow before writing any code.",
       },
       {
-        title: "Service showcase",
-        description: "A clean, scannable layout for browsing services without clutter.",
+        title: "Staff & scheduling",
+        description: "Doctor, specialist, and secretary profiles with per-day work schedules and attendance tracking.",
+      },
+      {
+        title: "Client sessions & payments",
+        description: "Per-client service history with session progress, remaining balances, and multiple payment methods.",
+      },
+      {
+        title: "Operations dashboard",
+        description: "Daily bookings, notifications, complaints, and payroll, all built and tested against the real API.",
       },
     ],
     gallery: [
-      { label: "Home page", pattern: "cards" },
-      { label: "Services", pattern: "list" },
+      { label: "Landing page", category: "Public site", pattern: "cards", image: "/masa-beauty/public-landing.jpg" },
+      { label: "Admin login", category: "Public site", pattern: "dashboard", image: "/masa-beauty/01-admin-login.jpg" },
+     
+
+      { label: "Employees hub", category: "Staff", pattern: "cards", image: "/masa-beauty/02-employees-hub.jpg" },
+      //  { label: "Employees hub (alt)", category: "Staff", pattern: "cards", image: "/masa-beauty/employees-hub.jpg" },
+      // { label: "Doctors & work days", category: "Staff", pattern: "list", image: "/masa-beauty/03-doctors-workdays.jpg" },
+      { label: "Doctors & work days (alt)", category: "Staff", pattern: "list", image: "/masa-beauty/doctors-workdays.jpg" },
+      { label: "Doctor profile & services", category: "Staff", pattern: "list", image: "/masa-beauty/doctor-form.jpg" },
+      // { label: "Specialists", category: "Staff", pattern: "cards", image: "/masa-beauty/04-specialists.jpg" },
+      { label: "Specialists (alt)", category: "Staff", pattern: "cards", image: "/masa-beauty/specialists.jpg" },
+      { label: "Secretaries", category: "Staff", pattern: "cards", image: "/masa-beauty/secretaries-list.jpg" },
+      { label: "Add staff form", category: "Staff", pattern: "list", image: "/masa-beauty/add-secretary-form.jpg" },
+
+      { label: "Attendance tracking", category: "Attendance & payroll", pattern: "dashboard", image: "/masa-beauty/05-attendance.jpg" },
+      // { label: "Attendance overview", category: "Attendance & payroll", pattern: "dashboard", image: "/masa-beauty/attendance-overview.jpg" },
+      { label: "Attendance — collapsed view", category: "Attendance & payroll", pattern: "dashboard", image: "/masa-beauty/attendance-collapsed.jpg" },
+      { label: "Staff attendance detail", category: "Attendance & payroll", pattern: "list", image: "/masa-beauty/secretary-attendance.jpg" },
+      { label: "Payroll management", category: "Attendance & payroll", pattern: "dashboard", image: "/masa-beauty/11-payroll.jpg" },
+      // { label: "Payroll management (alt)", category: "Attendance & payroll", pattern: "dashboard", image: "/masa-beauty/payroll-management.jpg" },
+      { label: "Add salary", category: "Attendance & payroll", pattern: "list", image: "/masa-beauty/add-salary-modal.jpg" },
+
+      { label: "Today's bookings", category: "Bookings & sessions", pattern: "list", image: "/masa-beauty/06-bookings.jpg" },
+      // { label: "Today's bookings (alt)", category: "Bookings & sessions", pattern: "list", image: "/masa-beauty/todays-bookings.jpg" },
+      { label: "Service sessions", category: "Bookings & sessions", pattern: "list", image: "/masa-beauty/07-sessions.jpg" },
+      // { label: "Service sessions (alt)", category: "Bookings & sessions", pattern: "list", image: "/masa-beauty/service-sessions.jpg" },
+
+      // { label: "Customer profile & history", category: "Customers", pattern: "cards", image: "/masa-beauty/08-customer-profile.jpg" },
+      { label: "Customer session history", category: "Customers", pattern: "cards", image: "/masa-beauty/customer-profile.jpg" },
+      { label: "Customer file", category: "Customers", pattern: "cards", image: "/masa-beauty/customer-file-top.jpg" },
+
+      // { label: "Payment methods", category: "Payments & complaints", pattern: "cards", image: "/masa-beauty/09-payment-methods.jpg" },
+      { label: "Payment methods (alt)", category: "Payments & complaints", pattern: "cards", image: "/masa-beauty/payment-methods.jpg" },
+      { label: "Employee complaints", category: "Payments & complaints", pattern: "list", image: "/masa-beauty/10-complaints.jpg" },
+      // { label: "Employee complaints (alt)", category: "Payments & complaints", pattern: "list", image: "/masa-beauty/complaints.jpg" },
+
+      { label: "Notifications inbox", category: "Notifications", pattern: "list", image: "/masa-beauty/12-notifications.jpg" },
+      // { label: "Notifications inbox (alt)", category: "Notifications", pattern: "list", image: "/masa-beauty/notifications-inbox.jpg" },
+      { label: "Notifications feed", category: "Notifications", pattern: "cards", image: "/masa-beauty/notifications-feed.jpg" },
     ],
     liveDemo: "",
-    github: "", // حطي رابط الريبو هون لما ترفعيه
+    github: "https://github.com/nsalh6831-debug/Masa-beauty-center-.git",
   },
 ];
 
+// export const skills = [
+//   {
+//     group: "Frontend",
+//     items: ["React.js", "JavaScript", "HTML5", "CSS3", "Bootstrap", "Responsive Design"],
+//   },
+//   {
+//     group: "API & Backend Integration",
+//     items: ["REST APIs", "Axios", "JSON", "Authentication"],
+//   },
+//   {
+//     group: "Tools",
+//     items: ["Git", "GitHub", "VS Code"],
+//   },
+//   {
+//     group: "Specialized",
+//     items: ["Google Maps API", "Live Tracking", "Polling", "Route Visualization"],
+//   },
+// ];
 export const skills = [
   {
-    group: "Frontend",
-    items: ["React.js", "JavaScript", "HTML5", "CSS3", "Bootstrap", "Responsive Design"],
+    group: "Frontend Development",
+    items: ["React.js", "JavaScript", "HTML5", "CSS3", "Bootstrap", "React Bootstrap", "Responsive Design"],
   },
   {
-    group: "API & Backend Integration",
+    group: "API & Integration",
     items: ["REST APIs", "Axios", "JSON", "Authentication"],
   },
   {
-    group: "Tools",
-    items: ["Git", "GitHub", "VS Code"],
+    group: "Maps & Tracking",
+    items: ["Google Maps API", "Live Tracking", "Route Visualization", "Polling"],
   },
   {
-    group: "Specialized",
-    items: ["Google Maps API", "Live Tracking", "Polling", "Route Visualization"],
+    group: "Development",
+    items: ["Component-Based Architecture", "React Hooks", "State Management", "Git", "GitHub"],
+  },
+  {
+    group: "Office & Tools",
+    items: ["Microsoft Office (Word, Excel, PowerPoint)", "Google Workspace", "Data Entry & Organization", "Internet Research"],
+  },
+  {
+    group: "Personal Skills",
+    items: ["Fast Learner", "Attention to Detail", "Time Management", "Problem Solving", "Communication", "Team Collaboration"],
+  },
+  {
+    group: "Languages & Systems",
+    items: ["Comfortable Learning New Software & Systems Quickly", "Basic Reporting & Documentation"],
   },
 ];

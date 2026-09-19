@@ -19,8 +19,16 @@ export default function App() {
 
   useEffect(() => {
     const onHashChange = () => {
-      setProjectId(getProjectIdFromHash());
-      window.scrollTo(0, 0);
+      const newId = getProjectIdFromHash();
+      setProjectId((prev) => {
+        // Only snap to top when actually switching in/out of a project page.
+        // Plain section anchors (#work, #about, ...) should keep the browser's
+        // native scroll-to-anchor behavior instead of being reset here.
+        if (newId !== prev) {
+          window.scrollTo(0, 0);
+        }
+        return newId;
+      });
     };
     window.addEventListener("hashchange", onHashChange);
     return () => window.removeEventListener("hashchange", onHashChange);

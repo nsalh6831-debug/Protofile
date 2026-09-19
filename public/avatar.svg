@@ -1,0 +1,37 @@
+<svg width="96" height="96" viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#8b5cf6"/>
+      <stop offset="100%" stop-color="#ec4899"/>
+    </linearGradient>
+  </defs>
+
+  <circle cx="48" cy="48" r="48" fill="url(#bg)"/>
+
+  <!-- hair back -->
+  <path d="M48 14c-16 0-27 12-27 27v10c0 3 1 6 3 8 1-9 3-15 6-18 4 6 12 9 18 9s14-3 18-9c3 3 5 9 6 18 2-2 3-5 3-8V41c0-15-11-27-27-27z" fill="#2b2140"/>
+
+  <!-- face -->
+  <ellipse cx="48" cy="50" rx="17" ry="19" fill="#f6d9c4"/>
+
+  <!-- hair front / fringe -->
+  <path d="M31 44c0-11 8-19 17-19s17 8 17 19c-3-4-8-7-13-7-2 3-6 5-10 5-4 0-7 1-11 2z" fill="#2b2140"/>
+
+  <!-- blush -->
+  <ellipse cx="36.5" cy="55" rx="3.2" ry="2" fill="#f0a898" opacity="0.55"/>
+  <ellipse cx="59.5" cy="55" rx="3.2" ry="2" fill="#f0a898" opacity="0.55"/>
+
+  <!-- eyes -->
+  <ellipse cx="40" cy="49" rx="2.4" ry="3" fill="#2b2140"/>
+  <ellipse cx="56" cy="49" rx="2.4" ry="3" fill="#2b2140"/>
+
+  <!-- eyebrows -->
+  <path d="M36 43c2-1.5 5-1.5 7 0" stroke="#2b2140" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+  <path d="M53 43c2-1.5 5-1.5 7 0" stroke="#2b2140" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+
+  <!-- smile -->
+  <path d="M41 60c3 3 11 3 14 0" stroke="#a85c4a" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+  <!-- shoulders / top -->
+  <path d="M18 96c2-14 14-24 30-24s28 10 30 24z" fill="#4c3a78"/>
+</svg>
